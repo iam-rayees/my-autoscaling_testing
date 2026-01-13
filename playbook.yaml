@@ -4,11 +4,11 @@
     become: true
     gather_facts: yes
     vars:
-      custom_heading: "Welcome To Autoscaling Testing by Saikiran Pinapathruni"
-      todays_date: "{{ ansible_facts['date_time']['date'] }}"
-      host_name: "{{ ansible_facts['hostname'] }}"
-      fqdn_name: "{{ ansible_facts['fqdn'] }}"
-      ip_address: "{{ ansible_facts['eth0']['ipv4']['address'] }}"
+      custom_heading: "Welcome To Autoscaling Testing by Mohammed Rayees"
+      todays_date: "{{ ansible_facts.date_time.date }}"
+      host_name: "{{ ansible_facts.hostname }}"
+      fqdn_name: "{{ ansible_facts.fqdn }}"
+      ip_address: "{{ ansible_facts.default_ipv4.address }}"
     tasks:
        - name: Run Apt Update
          shell: apt update && apt install -y python3-apt
